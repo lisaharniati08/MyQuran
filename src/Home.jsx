@@ -28,21 +28,21 @@ export default function Home() {
       </div>
 
       {/* Stats & Quotes */}
-      <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
+      <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center transition-colors duration-300">
         <p className="font-arabic text-3xl mb-4 text-primary">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِيْ خَلَقَۚ</p>
-        <p className="text-gray-600 italic">"Bacalah dengan (menyebut) nama Tuhanmu yang menciptakan."</p>
-        <p className="text-sm text-gray-400 mt-2">— Q.S Al-'Alaq: 1</p>
+        <p className="text-gray-600 dark:text-gray-300 italic">"Bacalah dengan (menyebut) nama Tuhanmu yang menciptakan."</p>
+        <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">— Q.S Al-'Alaq: 1</p>
       </div>
 
       {/* Menu Cards */}
       <div className="max-w-2xl mx-auto w-full">
-        <Link to="/surah" className="group bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/30 transition-all hover:-translate-y-1 flex items-center gap-6">
-          <div className="w-16 h-16 bg-green-50 rounded-2xl flex shrink-0 items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors text-primary">
+        <Link to="/surah" className="group bg-white dark:bg-gray-800 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:border-primary/30 dark:hover:border-primary/50 transition-all hover:-translate-y-1 flex items-center gap-6">
+          <div className="w-16 h-16 bg-green-50 dark:bg-primary/10 rounded-2xl flex shrink-0 items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors text-primary">
             <Book size={32} />
           </div>
           <div>
-            <h3 className="text-xl md:text-2xl font-semibold mb-1 text-gray-800 group-hover:text-primary transition-colors">Daftar Surat</h3>
-            <p className="text-gray-500 text-sm md:text-base">Jelajahi 114 Surat dalam Al-Qur'an lengkap dengan terjemahan dan audio.</p>
+            <h3 className="text-xl md:text-2xl font-semibold mb-1 text-gray-800 dark:text-gray-100 group-hover:text-primary transition-colors">Daftar Surat</h3>
+            <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">Jelajahi 114 Surat dalam Al-Qur'an lengkap dengan terjemahan dan audio.</p>
           </div>
         </Link>
       </div>

@@ -8,7 +8,7 @@ import ScrollToTop from './ScrollToTop';
 function App() {
   return (
     <HashRouter>
-      <div className="min-h-screen bg-gray-50 font-sans flex flex-col relative">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-gray-100 font-sans flex flex-col relative transition-colors duration-300">
         <Navbar />
         <main className="flex-grow container mx-auto px-4 py-8 max-w-5xl pt-24">
           <Routes>

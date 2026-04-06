@@ -11,3 +11,9 @@ export const getSurahDetail = async (nomor) => {
   if (!response.ok) throw new Error('Gagal mengambil detail surat');
   return await response.json();
 };
+
+export const getTafsirDetail = async (nomor) => {
+  const response = await fetch(`${BASE_URL}/tafsir/${nomor}`);
+  if (!response.ok) throw new Error('Gagal mengambil detail tafsir');
+  return await response.json();
+};
