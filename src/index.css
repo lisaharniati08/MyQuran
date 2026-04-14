@@ -6,7 +6,9 @@
 @theme {
   --font-sans: "Poppins", sans-serif;
   --font-arabic: "Amiri", serif;
-  --color-primary: #16a34a;
+  --color-primary: #CA6180;
+  --color-secandary: #F9D0CD;
+  --color-green: #C3CC9B;
 }
 
 body {

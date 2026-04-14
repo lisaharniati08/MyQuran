@@ -42,7 +42,7 @@ export default function SurahList() {
           <input 
             type="text" 
             placeholder="Cari surat (contoh: Yasin)..." 
-            className="w-full pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/40 focus:border-primary transition-all"
+            className="w-full pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-secandary/20 dark:focus:ring-primary/40 focus:border-secandary transition-all"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />

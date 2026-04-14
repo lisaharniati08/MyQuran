@@ -16,7 +16,7 @@ export default function Home() {
           <p className="text-green-50 text-lg md:text-xl max-w-lg mb-6">
             Baca, pelajari, dan dengarkan lantunan ayat suci Al-Qur'an kapan saja dan di mana saja.
           </p>
-          <Link to="/surah" className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-md">
+          <Link to="/surah" className="inline-flex items-center gap-2 bg-secandary text-primary px-6 py-3 rounded-xl font-semibold hover:bg-green transition-colors shadow-md">
             <Book size={20} />
             Mulai Membaca
           </Link>
@@ -39,7 +39,7 @@ export default function Home() {
         <Link to="/surah" className="group bg-white dark:bg-gray-800 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:border-primary/30 dark:hover:border-primary/50 transition-all hover:-translate-y-1 flex items-center gap-6">
           <div className="w-16 h-16 bg-green-50 dark:bg-primary/10 rounded-2xl flex shrink-0 items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors text-primary">
             <Book size={32} />
-          </div>
+            </div>
           <div>
             <h3 className="text-xl md:text-2xl font-semibold mb-1 text-gray-800 dark:text-gray-100 group-hover:text-primary transition-colors">Daftar Surat</h3>
             <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base">Jelajahi 114 Surat dalam Al-Qur'an lengkap dengan terjemahan dan audio.</p>
