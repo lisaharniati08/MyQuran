@@ -29,7 +29,7 @@ export default function Home() {
 
       {/* Stats & Quotes */}
       <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center transition-colors duration-300">
-        <p className="font-arabic text-3xl mb-4 text-primary">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِيْ خَلَقَۚ</p>
+        <p className="font-arabic text-2xl mb-2 text-primary">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِيْ خَلَقَۚ</p>
         <p className="text-gray-600 dark:text-gray-300 italic">"Bacalah dengan (menyebut) nama Tuhanmu yang menciptakan."</p>
         <p className="text-sm text-gray-400 dark:text-gray-500 mt-2">— Q.S Al-'Alaq: 1</p>
       </div>
