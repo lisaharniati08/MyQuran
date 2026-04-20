@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import SurahList from './SurahList';
 import SurahDetail from './SurahDetail';
+import Profile from './Profile';
 import ScrollToTop from './ScrollToTop';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/surah" element={<SurahList />} />
             <Route path="/surah/:nomor" element={<SurahDetail />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>
         <ScrollToTop />

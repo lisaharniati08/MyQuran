@@ -38,10 +38,13 @@ export default function Navbar() {
         
         <ul className="flex items-center gap-6 text-sm sm:text-base">
           <li>
-            <Link to="/" className={isActive('/')}>Home</Link>
+            <Link to="/" className={isActive('/') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Home</Link>
           </li>
           <li>
             <Link to="/surah" className={isActive('/surah') || location.pathname.startsWith('/surah') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Surah</Link>
+          </li>
+          <li>
+            <Link to="/profile" className={isActive('/profile') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Profile</Link>
           </li>
           <li>
             <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center">

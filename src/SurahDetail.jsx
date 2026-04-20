@@ -141,5 +141,6 @@ export default function SurahDetail() {
             </div>
           );
         })}
-      </div></motion.div>);
+      </div>
+    </motion.div>);
 }
