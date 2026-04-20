@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpenText, Sun, Moon } from 'lucide-react';
+import { BookOpenText, Sun, Moon, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
   
   // Logika: Ambil dari localStorage, atau deteksi preferensi perangkat (System Preference)
   const [theme, setTheme] = useState(() => {
@@ -36,23 +37,48 @@ export default function Navbar() {
           </span>
         </Link>
         
-        <ul className="flex items-center gap-6 text-sm sm:text-base">
-          <li>
-            <Link to="/" className={isActive('/') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Home</Link>
-          </li>
-          <li>
-            <Link to="/surah" className={isActive('/surah') || location.pathname.startsWith('/surah') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Surah</Link>
-          </li>
-          <li>
-            <Link to="/profile" className={isActive('/profile') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Profile</Link>
-          </li>
-          <li>
-            <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center">
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-          </li>
-        </ul>
+        <div className="flex items-center gap-2 md:gap-6">
+          {/* Desktop Menu */}
+          <ul className="hidden md:flex items-center gap-6 text-base">
+            <li>
+              <Link to="/" className={isActive('/') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Home</Link>
+            </li>
+            <li>
+              <Link to="/surah" className={isActive('/surah') || location.pathname.startsWith('/surah') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Surah</Link>
+            </li>
+            <li>
+              <Link to="/profile" className={isActive('/profile') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors"}>Profile</Link>
+            </li>
+          </ul>
+
+          {/* Tombol Tema (Selalu Tampil) */}
+          <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center">
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          
+          {/* Tombol Hamburger (Khusus Mobile) */}
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-lg px-4 py-6 transition-colors duration-300">
+          <ul className="flex flex-col gap-4 text-base">
+            <li>
+              <Link to="/" onClick={() => setIsOpen(false)} className={`block ${isActive('/') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary"}`}>Home</Link>
+            </li>
+            <li>
+              <Link to="/surah" onClick={() => setIsOpen(false)} className={`block ${isActive('/surah') || location.pathname.startsWith('/surah') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary"}`}>Surah</Link>
+            </li>
+            <li>
+              <Link to="/profile" onClick={() => setIsOpen(false)} className={`block ${isActive('/profile') ? "text-primary font-semibold" : "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary"}`}>Profile</Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }

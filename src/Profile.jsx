@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { User, Mail, BookOpen, GraduationCap } from 'lucide-react';
+import fotoProfil from './assets/purplesunflower.jpg';
 
 export default function Profile() {
   return (
@@ -12,7 +13,7 @@ export default function Profile() {
       <div className="bg-green-50 dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 text-center transition-colors duration-300">
         <div className="relative w-32 h-32 mx-auto mb-6">
           <img
-            src="./public/purplesunflower.jpg"
+            src={fotoProfil}
             alt="Foto Profil"
             className="rounded-full object-cover w-full h-full border-4 border-secandary dark:border-primary/20 shadow-md"
           />
